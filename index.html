@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faris Rahman P — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c232d;
+    --border: #2a3340;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --teal: #39d2c0;
+    --teal-dim: rgba(57,210,192,0.12);
+    --gold: #d4a843;
+    --gold-dim: rgba(212,168,67,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Mulish', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* subtle grid bg */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .page {
+    position: relative; z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-left: 3px solid var(--teal);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-bottom: 3rem;
+    animation: slideIn 0.6s ease both;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: var(--text);
+  }
+  header h1 span { color: var(--teal); }
+  .header-title {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin: 0.5rem 0 1rem;
+    font-weight: 600;
+  }
+  .contact-row {
+    display: flex; flex-wrap: wrap; gap: 1.2rem;
+  }
+  .contact-row a, .contact-row span {
+    font-size: 0.85rem; color: var(--muted);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.35rem;
+    transition: color 0.2s;
+  }
+  .contact-row a:hover { color: var(--teal); }
+  .dot {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--border); display: inline-block;
+    align-self: center;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 2.6rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.2s; }
+  .section:nth-child(4) { animation-delay: 0.3s; }
+  .section:nth-child(5) { animation-delay: 0.4s; }
+  .section:nth-child(6) { animation-delay: 0.5s; }
+  .section:nth-child(7) { animation-delay: 0.6s; }
+
+  .section-head {
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1.4rem;
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* ── EXPERIENCE ITEM ── */
+  .exp-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .exp-item:hover { border-color: var(--teal); transform: translateX(3px); }
+  .exp-item:hover::before { opacity: 1; }
+
+  .exp-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; flex-wrap: wrap; gap: 0.3rem;
+    margin-bottom: 0.25rem;
+  }
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 500;
+    color: var(--text);
+  }
+  .exp-period {
+    font-size: 0.78rem; color: var(--gold);
+    background: var(--gold-dim);
+    padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-weight: 600; white-space: nowrap;
+  }
+  .exp-org {
+    font-size: 0.82rem; color: var(--teal);
+    margin-bottom: 0.75rem; font-weight: 600;
+  }
+  .exp-loc { color: var(--muted); font-weight: 400; }
+
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    font-size: 0.88rem; color: var(--muted);
+    padding-left: 1.1rem; position: relative;
+    margin-bottom: 0.3rem; line-height: 1.6;
+  }
+  .bullet-list li::before {
+    content: '▸'; position: absolute; left: 0;
+    color: var(--teal); font-size: 0.7rem;
+    top: 0.15rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem;
+    display: flex; justify-content: space-between;
+    align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;
+    transition: border-color 0.2s;
+  }
+  .edu-item:hover { border-color: var(--gold); }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .edu-uni { font-size: 0.82rem; color: var(--teal); font-weight: 600; }
+  .edu-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+  .edu-right { text-align: right; }
+  .edu-period {
+    font-size: 0.78rem; color: var(--gold);
+    background: var(--gold-dim);
+    padding: 0.2rem 0.6rem; border-radius: 20px;
+    font-weight: 600; display: inline-block;
+  }
+  .edu-grade {
+    font-size: 0.8rem; color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    transition: border-color 0.2s;
+  }
+  .skill-card:hover { border-color: var(--teal); }
+  .skill-cat {
+    font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--teal);
+    font-weight: 700; margin-bottom: 0.7rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-size: 0.78rem;
+    background: var(--teal-dim);
+    color: var(--teal);
+    padding: 0.22rem 0.65rem;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid rgba(57,210,192,0.2);
+  }
+
+  /* ── PROJECT ── */
+  .project-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+  }
+  .project-item:hover { border-color: var(--gold); }
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.98rem; font-weight: 500;
+    margin-bottom: 0.5rem; color: var(--text);
+  }
+  .project-title span { color: var(--gold); }
+  .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── ACHIEVEMENTS ── */
+  .ach-list { list-style: none; }
+  .ach-list li {
+    font-size: 0.88rem; color: var(--muted);
+    padding: 0.55rem 0.9rem 0.55rem 2.2rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .ach-list li:first-child { border-top: 1px solid var(--border); }
+  .ach-list li:hover { background: var(--surface); }
+  .ach-list li::before {
+    content: '★';
+    position: absolute; left: 0.7rem;
+    color: var(--gold); font-size: 0.68rem;
+    top: 50%; transform: translateY(-50%);
+  }
+
+  /* ── LEADERSHIP ── */
+  .lead-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    font-size: 0.88rem; color: var(--muted);
+    line-height: 1.7;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 580px) {
+    .exp-top { flex-direction: column; }
+    .edu-item { flex-direction: column; }
+    .edu-right { text-align: left; }
+    .contact-row { gap: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Faris <span>Rahman P</span></h1>
+    <p class="header-title">Operations Management · Process Optimization · Analytics</p>
+    <div class="contact-row">
+      <a href="tel:+919645415370">+91 96454 15370</a>
+      <span class="dot"></span>
+      <a href="mailto:farisrahman05@gmail.com">farisrahman05@gmail.com</a>
+      <span class="dot"></span>
+      <a href="https://linkedin.com/in/farisrahmanp" target="_blank">linkedin.com/in/farisrahmanp</a>
+      <span class="dot"></span>
+      <span>Kerala, India</span>
+    </div>
+  </header>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Academic Associate</div>
+        <div class="exp-period">Nov 2024 – Present</div>
+      </div>
+      <div class="exp-org">Indian Institute of Management Indore (IIM Indore) <span class="exp-loc">· Indore, MP</span></div>
+      <ul class="bullet-list">
+        <li>Supported faculty in course delivery, assessment design, and research across postgraduate management programmes including Business Decision Modeling, Game Theory for Business Decisions, Logistics &amp; Supply Chain Management, and Platform Operations.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Business Operations Executive</div>
+        <div class="exp-period">June 2024 – Present</div>
+      </div>
+      <div class="exp-org">Sincere Extractions LLP <span class="exp-loc">· Malappuram, Kerala</span></div>
+      <ul class="bullet-list">
+        <li>Reduced material wastage by 20% via a structured inventory tracking system and improved stock visibility.</li>
+        <li>Cut procurement lead time by 18% through standardized workflows, SOP rollout, and Excel-based tracking.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Operations Intern</div>
+        <div class="exp-period">June 2023 – Aug 2023</div>
+      </div>
+      <div class="exp-org">Aster MIMS Hospital <span class="exp-loc">· Kottakkal, Kerala</span></div>
+      <ul class="bullet-list">
+        <li>Redesigned inventory store layout using lean principles and ABC classification, reducing motion waste and improving retrieval efficiency.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Education</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">MBA – Operations Management</div>
+        <div class="edu-uni">Aligarh Muslim University</div>
+        <div class="edu-note">Operations Management · Supply Chain · Project Management · Spreadsheet Modeling</div>
+      </div>
+      <div class="edu-right">
+        <div class="edu-period">Sep 2022 – June 2024</div>
+        <div class="edu-grade">First Class · CGPA 7.8</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">B.Tech – Mechanical Engineering</div>
+        <div class="edu-uni">Aligarh Muslim University</div>
+      </div>
+      <div class="edu-right">
+        <div class="edu-period">Aug 2017 – June 2021</div>
+        <div class="edu-grade">First Class · CGPA 7.5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">Operations</div>
+        <div class="tags">
+          <span class="tag">Process Optimization</span>
+          <span class="tag">Workflow Analysis</span>
+          <span class="tag">SOP Development</span>
+          <span class="tag">Supply Chain</span>
+          <span class="tag">Inventory Mgmt</span>
+          <span class="tag">Lean Principles</span>
+          <span class="tag">ERP (SAP, Oracle)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Analytics</div>
+        <div class="tags">
+          <span class="tag">MS Excel (Advanced)</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">MS Power BI</span>
+          <span class="tag">Spreadsheet Modeling</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Tools</div>
+        <div class="tags">
+          <span class="tag">Notion</span>
+          <span class="tag">Asana</span>
+          <span class="tag">Figma</span>
+          <span class="tag">MS Office Suite</span>
+          <span class="tag">Google Workspace</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="project-item">
+      <div class="project-title">Workflow-Optimized Store &amp; Warehouse Design <span>— Aster MIMS Hospital</span></div>
+      <div class="project-desc">Analysed existing store layout, item movement frequency, and workflow patterns to quantify motion waste. Redesigned rack layout using lean principles and ABC inventory classification, improving retrieval speed and reducing staff movement.</div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Achievements &amp; Certifications</h2>
+      <div class="section-line"></div>
+    </div>
+    <ul class="ach-list">
+      <li>Qualified UGC-NET in Management — June 2024 and December 2023</li>
+      <li>Google Foundations of Project Management — Coursera</li>
+      <li>Attended workshop on Data Analytics and AI — CCSIT, University of Calicut</li>
+    </ul>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Leadership</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lead-box">
+      Served as <strong style="color:var(--text)">General Secretary of the AMU Malayali Community (2023–24)</strong>, managing community events, communications, and a team of student representatives. Previously held roles as Joint Secretary (2019–20) and PRO (2018–19).
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
