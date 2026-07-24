@@ -31,7 +31,6 @@
     min-height: 100vh;
   }
 
-  /* subtle grid bg */
   body::before {
     content: '';
     position: fixed; inset: 0; z-index: 0;
@@ -50,7 +49,7 @@
     padding: 3rem 2rem 5rem;
   }
 
-  /* ── HEADER ── */
+  /* HEADER */
   header {
     border-left: 3px solid var(--teal);
     padding: 0.5rem 0 0.5rem 1.5rem;
@@ -90,7 +89,7 @@
     align-self: center;
   }
 
-  /* ── SECTION ── */
+  /* SECTION */
   .section {
     margin-bottom: 2.6rem;
     animation: fadeUp 0.5s ease both;
@@ -101,6 +100,7 @@
   .section:nth-child(5) { animation-delay: 0.4s; }
   .section:nth-child(6) { animation-delay: 0.5s; }
   .section:nth-child(7) { animation-delay: 0.6s; }
+  .section:nth-child(8) { animation-delay: 0.7s; }
 
   .section-head {
     display: flex; align-items: center; gap: 0.8rem;
@@ -120,7 +120,19 @@
     background: linear-gradient(to right, var(--border), transparent);
   }
 
-  /* ── EXPERIENCE ITEM ── */
+  /* SUMMARY */
+  .summary-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* EXPERIENCE */
   .exp-item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -176,7 +188,7 @@
     top: 0.15rem;
   }
 
-  /* ── EDUCATION ── */
+  /* EDUCATION */
   .edu-item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -207,10 +219,10 @@
     margin-top: 0.4rem;
   }
 
-  /* ── SKILLS ── */
+  /* SKILLS */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
   }
   .skill-card {
@@ -237,7 +249,7 @@
     border: 1px solid rgba(57,210,192,0.2);
   }
 
-  /* ── PROJECT ── */
+  /* PROJECTS */
   .project-item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -253,9 +265,8 @@
     margin-bottom: 0.5rem; color: var(--text);
   }
   .project-title span { color: var(--gold); }
-  .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
 
-  /* ── ACHIEVEMENTS ── */
+  /* CERTIFICATIONS */
   .ach-list { list-style: none; }
   .ach-list li {
     font-size: 0.88rem; color: var(--muted);
@@ -273,18 +284,7 @@
     top: 50%; transform: translateY(-50%);
   }
 
-  /* ── LEADERSHIP ── */
-  .lead-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1.2rem 1.4rem;
-    font-size: 0.88rem; color: var(--muted);
-    line-height: 1.7;
-    border-left: 3px solid var(--gold);
-  }
-
-  /* ── ANIMATIONS ── */
+  /* ANIMATIONS */
   @keyframes slideIn {
     from { opacity: 0; transform: translateX(-20px); }
     to { opacity: 1; transform: translateX(0); }
@@ -294,7 +294,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 580px) {
     .exp-top { flex-direction: column; }
     .edu-item { flex-direction: column; }
@@ -309,22 +308,35 @@
   <!-- HEADER -->
   <header>
     <h1>Faris <span>Rahman P</span></h1>
-    <p class="header-title">Operations Management · Process Optimization · Analytics</p>
+    <p class="header-title">Project Management · Operations · Process Improvement</p>
     <div class="contact-row">
       <a href="tel:+919645415370">+91 96454 15370</a>
       <span class="dot"></span>
       <a href="mailto:farisrahman05@gmail.com">farisrahman05@gmail.com</a>
       <span class="dot"></span>
-      <a href="https://linkedin.com/in/farisrahmanp" target="_blank">linkedin.com/in/farisrahmanp</a>
+      <a href="https://linkedin.com/in/farisrahmanp" target="_blank">LinkedIn</a>
+      <span class="dot"></span>
+      <a href="https://itsfrp.github.io" target="_blank">itsfrp.github.io</a>
       <span class="dot"></span>
       <span>Kerala, India</span>
     </div>
   </header>
 
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Professional Summary</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="summary-box">
+      Project Management professional with experience leading process improvement initiatives across manufacturing, healthcare, and academia. Skilled in project coordination, stakeholder management, workflow optimization, procurement, and operational analytics. Demonstrated success in delivering measurable improvements, including a 20% reduction in material wastage and an 18% reduction in procurement lead time through structured planning and continuous improvement initiatives. Currently supporting postgraduate teaching and research in Operations Management and Supply Chain at IIM Indore, with a strong focus on project execution, collaboration, and delivering measurable business outcomes.
+    </div>
+  </div>
+
   <!-- EXPERIENCE -->
   <div class="section">
     <div class="section-head">
-      <h2>Experience</h2>
+      <h2>Professional Experience</h2>
       <div class="section-line"></div>
     </div>
 
@@ -333,32 +345,145 @@
         <div class="exp-role">Academic Associate</div>
         <div class="exp-period">Nov 2024 – Present</div>
       </div>
-      <div class="exp-org">Indian Institute of Management Indore (IIM Indore) <span class="exp-loc">· Indore, MP</span></div>
+      <div class="exp-org">Indian Institute of Management Indore <span class="exp-loc">· Indore, Madhya Pradesh</span></div>
       <ul class="bullet-list">
-        <li>Supported faculty in course delivery, assessment design, and research across postgraduate management programmes including Business Decision Modeling, Game Theory for Business Decisions, Logistics &amp; Supply Chain Management, and Platform Operations.</li>
+        <li>Coordinated multiple academic projects simultaneously, managing schedules, deliverables, assessments, and stakeholder communication across postgraduate courses.</li>
+        <li>Planned and monitored project timelines for quizzes, assignments, examinations, and grading activities to ensure timely delivery.</li>
+        <li>Managed project documentation including assessment rubrics, case studies, reports, and course materials.</li>
+        <li>Collaborated with faculty and administrative stakeholders to execute research initiatives and continuous process improvement projects.</li>
+        <li>Developed Excel-based tracking systems supporting performance monitoring and academic workflow management.</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-top">
         <div class="exp-role">Business Operations Executive</div>
-        <div class="exp-period">June 2024 – Present</div>
+        <div class="exp-period">Jun 2024 – Nov 2024</div>
       </div>
-      <div class="exp-org">Sincere Extractions LLP <span class="exp-loc">· Malappuram, Kerala</span></div>
+      <div class="exp-org">Sincere Extractions LLP <span class="exp-loc">· Kerala</span></div>
       <ul class="bullet-list">
-        <li>Reduced material wastage by 20% via a structured inventory tracking system and improved stock visibility.</li>
-        <li>Cut procurement lead time by 18% through standardized workflows, SOP rollout, and Excel-based tracking.</li>
+        <li>Coordinated procurement, production, and dispatch activities involving suppliers and internal stakeholders.</li>
+        <li>Led inventory improvement initiatives that reduced material wastage by 20%.</li>
+        <li>Planned and executed procurement process improvement initiatives, reducing lead time by 18%.</li>
+        <li>Developed project tracking dashboards and operational reports.</li>
+        <li>Standardized operational processes through documentation and SOP development.</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-top">
         <div class="exp-role">Operations Intern</div>
-        <div class="exp-period">June 2023 – Aug 2023</div>
+        <div class="exp-period">Jun 2023 – Aug 2023</div>
       </div>
-      <div class="exp-org">Aster MIMS Hospital <span class="exp-loc">· Kottakkal, Kerala</span></div>
+      <div class="exp-org">Aster MIMS Hospital <span class="exp-loc">· Kerala</span></div>
       <ul class="bullet-list">
-        <li>Redesigned inventory store layout using lean principles and ABC classification, reducing motion waste and improving retrieval efficiency.</li>
+        <li>Led a cross-functional warehouse optimization project.</li>
+        <li>Planned workflow analysis and inventory movement studies.</li>
+        <li>Coordinated data collection and process evaluation activities.</li>
+        <li>Delivered recommendations that improved warehouse workflow efficiency.</li>
+        <li>Presented project outcomes and implementation recommendations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Professional Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">Project Management</div>
+        <div class="tags">
+          <span class="tag">Project Planning</span>
+          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Cross-functional Collaboration</span>
+          <span class="tag">Monitoring & Reporting</span>
+          <span class="tag">Risk Identification</span>
+          <span class="tag">Resource Coordination</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Process Improvement</div>
+        <div class="tags">
+          <span class="tag">Business Process Improvement</span>
+          <span class="tag">Workflow Optimization</span>
+          <span class="tag">SOP Development</span>
+          <span class="tag">Continuous Improvement</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Analytics & Reporting</div>
+        <div class="tags">
+          <span class="tag">MS Excel (Advanced)</span>
+          <span class="tag">SQL (Intermediate)</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Tools & Systems</div>
+        <div class="tags">
+          <span class="tag">Asana</span>
+          <span class="tag">Notion</span>
+          <span class="tag">MS Office Suite</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">Oracle ERP</span>
+          <span class="tag">SAP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">AI & Automation</div>
+        <div class="tags">
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">AI Documentation</span>
+          <span class="tag">Workflow Automation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Languages</div>
+        <div class="tags">
+          <span class="tag">English</span>
+          <span class="tag">Hindi</span>
+          <span class="tag">Urdu</span>
+          <span class="tag">Malayalam</span>
+          <span class="tag">German (Intermediate)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">Warehouse Workflow Optimization <span>— Aster MIMS Hospital</span></div>
+      <ul class="bullet-list">
+        <li>Analyzed 51,929 inventory picks across 4,700+ SKUs using ABC inventory analysis.</li>
+        <li>Recommended warehouse layout optimization and Lean process improvements to improve inventory accessibility and reduce operational waste.</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">Procurement Process Optimization <span>— Sincere Extractions LLP</span></div>
+      <ul class="bullet-list">
+        <li>Led a procurement process improvement initiative that reduced procurement lead time by 18%.</li>
+        <li>Developed Excel-based dashboards to improve procurement visibility and support operational decision-making.</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">Design and Analysis of Laminated Composite Structures <span>— ZHCET, AMU</span></div>
+      <ul class="bullet-list">
+        <li>Designed and evaluated laminated composite structures using engineering analysis and material selection techniques.</li>
+        <li>Applied analytical modeling to evaluate design alternatives and improve structural performance.</li>
       </ul>
     </div>
   </div>
@@ -372,12 +497,12 @@
 
     <div class="edu-item">
       <div>
-        <div class="edu-degree">MBA – Operations Management</div>
+        <div class="edu-degree">MBA – Operations Management &amp; Finance</div>
         <div class="edu-uni">Aligarh Muslim University</div>
-        <div class="edu-note">Operations Management · Supply Chain · Project Management · Spreadsheet Modeling</div>
+        <div class="edu-note">Business Decision Modeling · Operations Research · Spreadsheet Modeling · Supply Chain Management · Project Management</div>
       </div>
       <div class="edu-right">
-        <div class="edu-period">Sep 2022 – June 2024</div>
+        <div class="edu-period">Sep 2022 – Jun 2024</div>
         <div class="edu-grade">First Class · CGPA 7.8</div>
       </div>
     </div>
@@ -386,89 +511,27 @@
       <div>
         <div class="edu-degree">B.Tech – Mechanical Engineering</div>
         <div class="edu-uni">Aligarh Muslim University</div>
+        <div class="edu-note">Engineering Economics · Manufacturing Technology · Operations Research</div>
       </div>
       <div class="edu-right">
-        <div class="edu-period">Aug 2017 – June 2021</div>
+        <div class="edu-period">Aug 2017 – Jun 2021</div>
         <div class="edu-grade">First Class · CGPA 7.5</div>
       </div>
     </div>
   </div>
 
-  <!-- SKILLS -->
+  <!-- CERTIFICATIONS -->
   <div class="section">
     <div class="section-head">
-      <h2>Skills</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-cat">Operations</div>
-        <div class="tags">
-          <span class="tag">Process Optimization</span>
-          <span class="tag">Workflow Analysis</span>
-          <span class="tag">SOP Development</span>
-          <span class="tag">Supply Chain</span>
-          <span class="tag">Inventory Mgmt</span>
-          <span class="tag">Lean Principles</span>
-          <span class="tag">ERP (SAP, Oracle)</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Analytics</div>
-        <div class="tags">
-          <span class="tag">MS Excel (Advanced)</span>
-          <span class="tag">Tableau</span>
-          <span class="tag">MS Power BI</span>
-          <span class="tag">Spreadsheet Modeling</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Tools</div>
-        <div class="tags">
-          <span class="tag">Notion</span>
-          <span class="tag">Asana</span>
-          <span class="tag">Figma</span>
-          <span class="tag">MS Office Suite</span>
-          <span class="tag">Google Workspace</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <div class="section-head">
-      <h2>Projects</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="project-item">
-      <div class="project-title">Workflow-Optimized Store &amp; Warehouse Design <span>— Aster MIMS Hospital</span></div>
-      <div class="project-desc">Analysed existing store layout, item movement frequency, and workflow patterns to quantify motion waste. Redesigned rack layout using lean principles and ABC inventory classification, improving retrieval speed and reducing staff movement.</div>
-    </div>
-  </div>
-
-  <!-- ACHIEVEMENTS -->
-  <div class="section">
-    <div class="section-head">
-      <h2>Achievements &amp; Certifications</h2>
+      <h2>Certifications</h2>
       <div class="section-line"></div>
     </div>
     <ul class="ach-list">
-      <li>Qualified UGC-NET in Management — June 2024 and December 2023</li>
-      <li>Google Foundations of Project Management — Coursera</li>
-      <li>Attended workshop on Data Analytics and AI — CCSIT, University of Calicut</li>
+      <li>UGC-NET in Management</li>
+      <li>Google Foundations of Project Management</li>
+      <li>SQL for Data Analysis — mimo.org</li>
+      <li>Data Analytics and AI Workshop — University of Calicut</li>
     </ul>
-  </div>
-
-  <!-- LEADERSHIP -->
-  <div class="section">
-    <div class="section-head">
-      <h2>Leadership</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="lead-box">
-      Served as <strong style="color:var(--text)">General Secretary of the AMU Malayali Community (2023–24)</strong>, managing community events, communications, and a team of student representatives. Previously held roles as Joint Secretary (2019–20) and PRO (2018–19).
-    </div>
   </div>
 
 </div>
